@@ -1,5 +1,5 @@
 // Contém o número do ÚLTIMO mês de cada ano (Primavera 1 até 19)
-export const primavera235: = [
+export const primavera235 = [
   12,  // Primavera 1 termina no mês 12
   24,  // Primavera 2 termina no mês 24
   37,  // Primavera 3 termina no mês 37 (inclui O Flutuar)
