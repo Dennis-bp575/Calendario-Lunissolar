@@ -4,33 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendário Lunissolar</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Carrega o Tailwind CSS instantaneamente -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="calendar-container">
-        <!-- Dados do Motor Mecânico -->
-        <header>
-            <h1 id="data-poetica">Carregando o tempo...</h1>
-            <p id="periodo-atual">...</p>
-        </header>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-4">
 
-        <main>
-            <div class="status-grid">
-                <div><strong>Estação Solar:</strong> <span id="estacao-solar">-</span></div>
-                <div><strong>Primavera:</strong> <span id="primavera-atual">-</span></div>
-                <div><strong>Ciclo:</strong> <span id="ciclo-atual">-</span></div>
-                <div><strong>Alinhamento:</strong> <span id="alinhamento-restante">-</span></div>
+    <!-- <main> original -->
+    <main class="w-full max-w-md">
+        
+        <!-- className="app" original -->
+        <div class="flex flex-col items-center justify-center">
+
+            <!-- className="card" original 
+                 Nota: O estilo de borda colorida dinâmico nós vamos aplicar depois via JavaScript! -->
+            <div id="calendar-card" class="w-full bg-slate-900 rounded-2xl p-6 shadow-2xl text-center space-y-4 border-t-[6px] border-slate-700">
+            
+                <!-- className="moon" original (Onde vai o emoji/ícone da lua) -->
+                <div id="moon-display" class="text-6xl my-2">
+                    🌙
+                </div>
+
+                <!-- className="month" original -->
+                <h1 id="poetic-month" class="text-3xl font-light tracking-wide text-indigo-200">
+                    O Entardecer
+                </h1>
+
+                <!-- Parágrafos de dados mecânicos do calendário -->
+                <p id="lunar-day" class="text-base text-slate-300">
+                    Hoje é o 28º dia lunar
+                </p>
+
+                <p id="period-display" class="text-sm italic text-slate-400">
+                    O Retorno
+                </p>
+
+                <p id="primavera-display" class="text-sm text-slate-300">
+                    Estamos na 8ª Primavera
+                </p>
+
+                <p id="cycle-display" class="text-sm text-slate-400 font-semibold">
+                    Ciclo 1
+                </p>
+
+                <p id="alignment-display" class="text-xs text-slate-400 max-w-xs mx-auto leading-relaxed">
+                    Restando 11 primaveras para o alinhamento e o início de um novo ciclo.
+                </p>
+
+                <!-- Seção Estação Solar -->
+                <div class="pt-2 border-t border-slate-800/60">
+                    <h3 class="text-sm font-semibold tracking-wider text-amber-400 uppercase">☀️ Estação Solar</h3>
+                    <p id="solar-season" class="text-base text-slate-200 mt-1">
+                        Inverno
+                    </p>
+                </div>
+
+                <!-- className="reflection" original (Onde a IA vai trabalhar depois) -->
+                <div class="reflection mt-4 pt-4 border-t border-slate-800 bg-slate-950/40 p-4 rounded-xl text-left">
+                    <h3 class="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-2">✨ Reflexão</h3>
+                    <p id="reflection-text" class="text-sm text-slate-300 italic leading-relaxed font-serif">
+                        O horizonte escurece lentamente, mas nada do que cumpriu sua função se perde. O inverno ensina que algumas transformações acontecem em silêncio.
+                    </p>
+                </div>
+
             </div>
+          
+        </div>
 
-            <!-- Seção da IA -->
-            <section class="reflection-section">
-                <h2>Reflexão do Dia</h2>
-                <p id="texto-reflexao" class="poetic-text">Buscando sabedoria nas estrelas...</p>
-                <button id="btn-atualizar-ia" style="display: none;">Forçar Nova Reflexão</button>
-            </section>
-        </main>
-    </div>
+    </main>
 
-    <script src="app.js"></script>
+    <!-- Script que vai controlar a dinâmica futuramente -->
+    <script type="module" src="/app.ts"></script>
 </body>
 </html>
+
