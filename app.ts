@@ -3,7 +3,7 @@ import { getLunisolarDate, monthColors } from './services/calendar';
 
 // Executa o seu motor passando a data exata de hoje
 const dadosAtuais = getLunisolarDate(new Date());
-cosole.log(dadosAtuais.moon)
+console.log(dadosAtuais.moon)
 window.addEventListener('DOMContentLoaded', () => {
   // Pega os elementos da nossa estrutura HTML
   const card = document.getElementById('calendar-card');
