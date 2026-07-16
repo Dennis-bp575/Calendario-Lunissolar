@@ -1,5 +1,5 @@
-import { poeticMonths, primavera235 } from '../data/months'
-import { getPeriodName } from '../data/periods'
+import { poeticMonths, primavera235 } from './data/months'
+import { getPeriodName } from './data/periods'
 export const CYCLE_START = new Date('2000-01-06')
 
 export const SYNODIC_MONTH = 29.530588
