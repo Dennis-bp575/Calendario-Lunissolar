@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário Lunissolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <!-- Dados do Motor Mecânico -->
+        <header>
+            <h1 id="data-poetica">Carregando o tempo...</h1>
+            <p id="periodo-atual">...</p>
+        </header>
+
+        <main>
+            <div class="status-grid">
+                <div><strong>Estação Solar:</strong> <span id="estacao-solar">-</span></div>
+                <div><strong>Primavera:</strong> <span id="primavera-atual">-</span></div>
+                <div><strong>Ciclo:</strong> <span id="ciclo-atual">-</span></div>
+                <div><strong>Alinhamento:</strong> <span id="alinhamento-restante">-</span></div>
+            </div>
+
+            <!-- Seção da IA -->
+            <section class="reflection-section">
+                <h2>Reflexão do Dia</h2>
+                <p id="texto-reflexao" class="poetic-text">Buscando sabedoria nas estrelas...</p>
+                <button id="btn-atualizar-ia" style="display: none;">Forçar Nova Reflexão</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
