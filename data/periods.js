@@ -1,4 +1,4 @@
-export function getPeriodName(lunarDay: number) {
+export function getPeriodName(lunarDay) {
   if (lunarDay <= 7) {
     return 'O Sopro'
   }
