@@ -30,7 +30,7 @@ export function getLunisolarDate(date) {
   const period = getPeriodName(lunarDay);
   const primavera = getPrimavera(days);
   const cycle = getCycle(days);
-  const frasedodia = getReflection();
+  const frasedodia = getDailyReflection(days,lunarDay);
   const estacaoAtual = getCurrentSeason(date);
   const moon = getMoonEmoji(lunarDay);
 
