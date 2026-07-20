@@ -6,6 +6,25 @@
     <title>Calendário Lunissolar</title>
     <!-- Carrega o Tailwind CSS instantaneamente -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            },
+            animation: {
+              float: 'float 4s ease-in-out infinite',
+            }
+          }
+        }
+      }
+    </script>
+
+    
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-4">
 
@@ -19,10 +38,9 @@
                  Nota: O estilo de borda colorida dinâmico nós vamos aplicar depois via JavaScript! -->
             <div id="calendar-card" class="w-full bg-slate-900 rounded-2xl p-6 shadow-2xl text-center space-y-4 border-t-[6px] border-slate-700">
             
-                <!-- className="moon" original (Onde vai o emoji/ícone da lua) -->
-                <div id="moon-display" class="my-2 flex justify-center items-center">
-                      <!-- Adicionada a classe mix-blend-screen aqui -->
-                      <img id="moon-img" src="" alt="Fase da Lua" class="w-16 h-16 rounded-full object-cover" />
+                <!-- Aplique as classes animate-float e o drop-shadow na DIV -->
+                <div id="moon-display" class="my-2 flex justify-center items-center animate-float drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+                      <img src="${moon}" alt="Lua" class="w-16 h-16 rounded-full object-cover" />
                 </div>
 
                 <!-- className="month" original -->
