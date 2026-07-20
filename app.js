@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
     card.style.borderTop = `6px solid ${corDoMes}`;
   }
 
-  if (moonDisplay) moonDisplay.innerHTML = `<img src="${dadosAtuais.moon}" alt="Lua" class="w-16 h-16 object-contain" />`
+  if (moonDisplay) moonDisplay.innerHTML = `<img src="${dadosAtuais.moon}" alt="Lua" class="w-16 h-16 object-contain mix-blend-screen" />`
   if (poeticMonth) poeticMonth.innerText = dadosAtuais.poeticMonth;
   if (lunarDay) lunarDay.innerText = `Hoje é o ${dadosAtuais.lunarDay}º dia lunar`;
   if (periodDisplay) periodDisplay.innerText = dadosAtuais.period;
