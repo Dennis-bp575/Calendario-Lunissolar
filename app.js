@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
     card.style.borderTop = `6px solid ${corDoMes}`;
   }
 
-  if (moonDisplay) moonDisplay.className = "my-2 flex justify-center items-center animate-float drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]";
+  if (moonDisplay) moonDisplay.className = "my-2 flex justify-center items-center animate-float drop-shadow-[0_0_25px_rgba(255,255,255,0.5)]";
   if (moonDisplay) moonDisplay.innerHTML = `<img src="${dadosAtuais.moon}" alt="Lua" class="w-24 h-24 rounded-full object-cover" />`
   if (poeticMonth) poeticMonth.innerText = dadosAtuais.poeticMonth;
   if (lunarDay) lunarDay.innerText = `Hoje é o ${dadosAtuais.lunarDay}º dia lunar`;
