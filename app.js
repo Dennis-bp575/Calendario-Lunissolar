@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const alignmentDisplay = document.getElementById('alignment-display');
   const solarSeason = document.getElementById('solar-season');
   const reflectionText = document.getElementById('reflection-text');
+  const reflectionOrigin = document.getElementById('reflection-origin');
 
   if (card) {
     // JS puro busca a propriedade direto no objeto sem precisar validar o tipo antes
@@ -37,9 +38,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   
   if (solarSeason) solarSeason.innerText = dadosAtuais.estacaoAtual;
-  if (dadosAtuais.frasedoDia) {
-      document.getElementById('reflection-text').textContent = dadosAtuais.frasedoDia.text;
-      document.getElementById('reflection-origin').textContent = dadosAtuais.frasedoDia.origin;
-  {
+  if (reflectionText) reflectionText.innerText = dadosAtuais.frasedoDia.text;
+  if (reflectionOrigin) reflectionOrigin.innerText = dadosAtuais.frasedoDia.origin;
+  
 });
 
