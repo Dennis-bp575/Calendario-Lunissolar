@@ -37,7 +37,7 @@ export function getLunisolarDate(date) {
 }
 
 export function getMoonEmoji(lunarDay) {
-   return `Luas/Lua${lunarDay}.png`;
+   return `services/Luas/Lua${lunarDay}.png`;
 }
 
 export function getDaysSinceCycleStart(date) {
