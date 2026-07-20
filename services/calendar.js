@@ -118,17 +118,18 @@ export function getDailyReflection(daysSinceStart, lunarDay) {
     // 6. Busca os dados na matriz estática de 13 meses
     const monthData = culturalReflections[archetypeNumber];
     if (!monthData) return null;
-    console.log("monthData", monthData)
+    
     const phaseReflections = monthData[phase];
     if (!phaseReflections || phaseReflections.length === 0) return null;
-  
+    console.log("phaseReflections", phaseReflections)
     // 7. Sorteio diário determinístico (muda o card todo dia, fixo no refresh)
     const now = new Date();
     const start = new Date(now.getFullYear(), 0, 0);
     const diff = now - start;
     const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
-    
+    console.log("dayOfYear", dayOfYear)
     const index = dayOfYear % phaseReflections.length;
-  
+    console.log("phaseReflections", phaseReflections[index])
+    console.log("index", index)
     return phaseReflections[index];
 }
