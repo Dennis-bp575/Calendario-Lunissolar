@@ -6,6 +6,7 @@ const dadosAtuais = getLunisolarDate(new Date());
 window.addEventListener('DOMContentLoaded', () => {
   const card = document.getElementById('calendar-card');
   const moonDisplay = document.getElementById('moon-display');
+  const moonImg = document.getElementById('moon-img');
   const poeticMonth = document.getElementById('poetic-month');
   const lunarDay = document.getElementById('lunar-day');
   const periodDisplay = document.getElementById('period-display');
