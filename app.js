@@ -37,6 +37,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   
   if (solarSeason) solarSeason.innerText = dadosAtuais.estacaoAtual;
-  if (reflectionText) reflectionText.innerText = dadosAtuais.frasedodia;
+  if (reflectionText) reflectionText.innerText = dadosAtuais.frasedoDia;
 });
 
