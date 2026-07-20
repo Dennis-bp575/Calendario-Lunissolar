@@ -90,9 +90,6 @@ export function getReflection() {
   return `O horizonte escurece lentamente, mas nada do que cumpriu sua função se perde.`; 
 }
 
-import { primavera235 } from '../data/periods.js';
-import { culturalReflections } from '../data/reflections.js';
-
 export function getDailyReflection(daysSinceStart, lunarDay) {
     // 1. Calcula o mesmo índice de 0 a 234 que você já usa no seu motor
     const monthIndex = Math.floor(daysSinceStart / SYNODIC_MONTH) % 235;
