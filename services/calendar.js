@@ -37,14 +37,7 @@ export function getLunisolarDate(date) {
 }
 
 export function getMoonEmoji(lunarDay) {
-  if (lunarDay <= 2) return '🌑';
-  if (lunarDay <= 7) return '🌒';
-  if (lunarDay <= 10) return '🌓';
-  if (lunarDay <= 14) return '🌔';
-  if (lunarDay === 15) return '🌕';
-  if (lunarDay <= 20) return '🌖';
-  if (lunarDay <= 24) return '🌗';
-  return '🌘';
+   return `Luas/Lua${lunarDay}.png`;
 }
 
 export function getDaysSinceCycleStart(date) {
