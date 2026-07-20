@@ -1,5 +1,5 @@
 // app.js
-import { getLunisolarDate, monthColors } from './services/calendar.js';
+import { getLunisolarDate, monthColors, getDailyReflection} from './services/calendar.js';
 
 const dadosAtuais = getLunisolarDate(new Date());
 
