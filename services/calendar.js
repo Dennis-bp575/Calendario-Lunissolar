@@ -90,18 +90,27 @@ export function getReflection() {
   return `O horizonte escurece lentamente, mas nada do que cumpriu sua função se perde.`; 
 }
 
-export function getReflectionByAbsoluteMonth(absoluteMonth, lunarDay) {
-    // 1. Descobre a qual Primavera (Ano) este mês absoluto pertence (1 a 19)
-    const primaveraIndex = primavera235.findIndex(fimMes => absoluteMonth <= fimMes);
-    if (primaveraIndex === -1) return null; // Mês fora do limite dos 235
+import { primavera235 } from '../data/periods.js';
+import { culturalReflections } from '../data/reflections.js';
+
+export function getDailyReflection(daysSinceStart, lunarDay) {
+    // 1. Calcula o mesmo índice de 0 a 234 que você já usa no seu motor
+    const monthIndex = Math.floor(daysSinceStart / SYNODIC_MONTH) % 235;
+    
+    // Converte para o número do mês absoluto (1 a 235) para bater com o array primavera235
+    const absoluteMonth = monthIndex + 1; 
   
-    // 2. Calcula o início do bloco da Primavera atual
-    const mesInicioPrimavera = primaveraIndex === 0 ? 1 : primavera235[primaveraIndex - 1] + 1;
+    // 2. Descobre qual é a Primavera atual (0 a 18)
+    const primaveraIdx = primavera235.findIndex(fimMes => absoluteMonth <= fimMes);
+    if (primaveraIdx === -1) return null;
   
-    // 3. Descobre a posição real do mês dentro do ano (1 a 12, ou 13 se for bissexto)
-    const monthArchetypeNumber = (absoluteMonth - mesInicioPrimavera) + 1;
+    // 3. Descobre o mês absoluto onde a Primavera atual começou
+    const mesInicioPrimavera = primaveraIdx === 0 ? 1 : primavera235[primaveraIdx - 1] + 1;
   
-    // 4. Mapeia a Fase da Lua pelo dia (1 a 28) com a sintaxe correta do JS
+    // 4. Descobre o número arquetípico do mês (1 a 12, ou 13 se for o mês bissexto)
+    const archetypeNumber = (absoluteMonth - mesInicioPrimavera) + 1;
+  
+    // 5. Mapeia a Fase da Lua pelo dia (1 a 28) com a sintaxe correta do JS
     let phase;
     if (lunarDay === 1) phase = "Nova";
     else if (lunarDay >= 2 && lunarDay <= 14) phase = "Crescente";
@@ -109,18 +118,19 @@ export function getReflectionByAbsoluteMonth(absoluteMonth, lunarDay) {
     else if (lunarDay >= 16 && lunarDay <= 28) phase = "Minguante";
     else return null;
   
-    // 5. Busca na nossa matriz de 13 meses usando o número arquetípico e a fase
-    const monthData = culturalReflections[monthArchetypeNumber];
+    // 6. Busca os dados na matriz estática de 13 meses
+    const monthData = culturalReflections[archetypeNumber];
     if (!monthData) return null;
   
     const phaseReflections = monthData[phase];
     if (!phaseReflections || phaseReflections.length === 0) return null;
   
-    // 6. Sorteio determinístico diário (muda a cada dia do ano civil, fixo no refresh)
+    // 7. Sorteio diário determinístico (muda o card todo dia, fixo no refresh)
     const now = new Date();
     const start = new Date(now.getFullYear(), 0, 0);
     const diff = now - start;
     const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+    
     const index = dayOfYear % phaseReflections.length;
   
     return phaseReflections[index];
