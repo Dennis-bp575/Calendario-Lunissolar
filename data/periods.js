@@ -1,23 +1,14 @@
 export function getPeriodName(lunarDay) {
-  if (lunarDay <= 7) {
-    return 'O Sopro'
+  if (lunarDay === 1) {
+    return 'Nova'
   }
-
-  if (lunarDay <= 14) {
-    return 'O Crescer'
+  if (lunarDay >= 2 && lunarDay <= 14)  {
+    return 'Crescente'
   }
-
   if (lunarDay === 15) {
-    return 'A Plenitude'
+    return 'Cheia'
   }
-
-  if (lunarDay <= 22) {
-    return 'O Declinar'
+  if (lunarDay >= 16 && lunarDay <= 28) {
+    return 'Minguante'
   }
-
-  if (lunarDay <= 29) {
-    return 'O Retorno'
-  }
-
-  return 'O Véu'
 }
