@@ -131,20 +131,47 @@
     </style>
     
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const splash = document.getElementById("vibet-splash");
+        document.addEventListener("DOMContentLoaded", () => {
+            const splash = document.getElementById("vibet-splash");
+            
+            setTimeout(() => {
+                splash.classList.add("fade-out");
+           
+                // --- INÍCIO DA ANIMAÇÃO DO CICLO LUNAR ---
+                const imgLua = document.getElementById('imagem-lua');
+                const moonDisplay = document.getElementById('moon-display');
+                
+                if (imgLua && dadosAtuais) {
+                    let diaInicial = 1;
+                    const diaFinal = dadosAtuais.lunarDay; // Ex: dia 8
+                    
+                    // Cria um intervalo que roda a cada 80 milissegundos mudando a foto
+                    const animacaoCiclo = setInterval(() => {
+                        if (diaInicial <= diaFinal) {
+                            // 1. Troca a imagem para a lua do dia atual da animação
+                            imgLua.src = `services/luas/lua${diaInicial}.png`;
+                            
+                            // 2. Calcula o brilho e a aura dinamicamente para cada passo do ciclo
+                            const int = 1 - (Math.abs(diaInicial - 14) / 14);
+                            const brilho = 100 + (int * 80); // Aumentamos um pouco mais o brilho da lua aqui (+80)
+                            const aura = int * 45; // Aura um pouco maior
+                            
+                            imgLua.style.filter = `brightness(${brilho}%)`;
+                            moonDisplay.style.filter = `drop-shadow(0 0 ${aura}px rgba(255, 255, 255, ${int * 0.7}))`;
+                            
+                            diaInicial++;
+                        } else {
+                            // Paramos a animação quando chegar no dia correto
+                            clearInterval(animacaoCiclo);
+                        }
+                    }, 80); // Velocidade da troca (quanto menor, mais rápido passa as luas)
+                }
+                // --- FIM DA ANIMAÇÃO ---
         
-        // Tempo ajustado para 2.3 segundos para casar perfeitamente com a nova velocidade da barra
-        setTimeout(() => {
-            splash.classList.add("fade-out");
-            const imgLua = document.getElementById('imagem-lua');
-            if (imgLua) {
-                imgLua.style.transform = 'rotate(0deg)';
-            }
-            // Remove totalmente do DOM após a transição para economizar memória e desempenho
-            setTimeout(() => splash.remove(), 400); 
-        }, 4000);
-    });
+                setTimeout(() => splash.remove(), 400); 
+            }, 4000);
+        });
+
     </script>
 
     
