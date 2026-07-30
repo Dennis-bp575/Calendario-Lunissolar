@@ -28,24 +28,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // 2. Colocamos a foto dentro da caixa com as novas classes do Tailwind (transition, duration, ease-out, transform)
   if (moonDisplay) moonDisplay.innerHTML = `<img id="imagem-lua" src="${dadosAtuais.moon}" alt="Lua" class="w-24 h-24 rounded-full object-cover transition-all duration-700 ease-out transform" />`;
 
-  const imgLua = document.getElementById('imagem-lua');
-  
-  if (imgLua && moonDisplay) {
-    const dia = dadosAtuais.lunarDay;
-    const intensidade = 1 - (Math.abs(dia - 14) / 14);
-    
-    const ganhoBrilho = 100 + (intensidade * 60); 
-    imgLua.style.filter = `brightness(${ganhoBrilho}%)`;
-    
-    const raioDesfoque = intensidade * 35;
-    const opacidadeAura = intensidade * 0.6;
-    moonDisplay.style.filter = `drop-shadow(0 0 ${raioDesfoque}px rgba(255, 255, 255, ${opacidadeAura}))`;
-
-  }
-
-
-
-  
   if (poeticMonth) poeticMonth.innerText = dadosAtuais.poeticMonth;
   if (lunarDay) lunarDay.innerText = `Hoje é o ${dadosAtuais.lunarDay}º dia lunar`;
   if (periodDisplay) periodDisplay.innerText = dadosAtuais.period;
