@@ -216,13 +216,30 @@
                     O Retorno
                 </p>
 
-                <p id="primavera-display" class="text-2xl text-slate-300">
-                    Estamos na 8ª Primavera
-                </p>
+                <!-- Container Horizontal para as informações de Ciclo e Alinhamento -->
+                <div class="flex flex-col gap-2 w-full pt-2 border-t border-slate-800/40">
+                    
+                    <!-- Linha única unificando Primavera e Ciclo -->
+                    <div class="flex flex-row items-center justify-between w-full px-2">
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-sm">🌱</span>
+                            <h3 class="text-sm font-semibold tracking-wider text-emerald-400 uppercase">
+                                Época Atual
+                            </h3>
+                        </div>
+                        <!-- Texto dinâmico unificado -->
+                        <p id="ciclo-completo" class="text-sm font-medium text-slate-200">
+                            <!-- O JS injetará: "8ª Primavera do 1º Ciclo" -->
+                        </p>
+                    </div>
+                
+                    <!-- Texto de contagem regressiva para o alinhamento (menor e discreto embaixo) -->
+                    <p id="alignment-display" class="text-[11px] text-slate-400 font-light text-right pr-2 italic">
+                        <!-- O JS preencherá o restante das primaveras -->
+                    </p>
+                
+                </div>
 
-                <p id="cycle-display" class="text-2xl text-slate-400 font-semibold">
-                    Ciclo 1
-                </p>
 
                 <p id="alignment-display" class="text-sm text-slate-400 max-w-xs mx-auto leading-relaxed">
                     Restando 11 primaveras para o alinhamento e o início de um novo ciclo.
