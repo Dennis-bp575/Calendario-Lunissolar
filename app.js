@@ -1,8 +1,6 @@
 // app.js
 import { getLunisolarDate, monthColors, getDailyReflection} from './services/calendar.js';
 
-const dadosAtuais = getLunisolarDate(new Date());
-// No seu app.js, onde os dados são calculados:
 console.log("Conteúdo de frasedoDia:", dadosAtuais.frasedoDia);
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -20,7 +18,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const reflectionOrigin = document.getElementById('reflection-origin');
 
   if (card) {
-    // JS puro busca a propriedade direto no objeto sem precisar validar o tipo antes
     const corDoMes = monthColors[dadosAtuais.poeticMonth] || '#475569';
     card.style.borderTop = `6px solid ${corDoMes}`;
   }
