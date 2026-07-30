@@ -137,36 +137,33 @@
             setTimeout(() => {
                 splash.classList.add("fade-out");
            
-                // --- INÍCIO DA ANIMAÇÃO DO CICLO LUNAR ---
                 const imgLua = document.getElementById('imagem-lua');
                 const moonDisplay = document.getElementById('moon-display');
                 
-                if (imgLua && dadosAtuais) {
+                // Buscamos o dia que o app.js guardou globalmente (padrão dia 1 se falhar)
+                const diaFinal = window.diaLunarAtual || 1; 
+                
+                if (imgLua && moonDisplay) {
                     let diaInicial = 1;
-                    const diaFinal = dadosAtuais.lunarDay; // Ex: dia 8
                     
-                    // Cria um intervalo que roda a cada 80 milissegundos mudando a foto
                     const animacaoCiclo = setInterval(() => {
                         if (diaInicial <= diaFinal) {
-                            // 1. Troca a imagem para a lua do dia atual da animação
                             imgLua.src = `services/luas/lua${diaInicial}.png`;
                             
-                            // 2. Calcula o brilho e a aura dinamicamente para cada passo do ciclo
+                            // Cálculo da pirâmide de brilho durante o ciclo
                             const int = 1 - (Math.abs(diaInicial - 14) / 14);
-                            const brilho = 100 + (int * 80); // Aumentamos um pouco mais o brilho da lua aqui (+80)
-                            const aura = int * 45; // Aura um pouco maior
+                            const brilho = 100 + (int * 80); // Lua um pouco maior e mais brilhante (+80)
+                            const aura = int * 45; 
                             
                             imgLua.style.filter = `brightness(${brilho}%)`;
                             moonDisplay.style.filter = `drop-shadow(0 0 ${aura}px rgba(255, 255, 255, ${int * 0.7}))`;
                             
                             diaInicial++;
                         } else {
-                            // Paramos a animação quando chegar no dia correto
                             clearInterval(animacaoCiclo);
                         }
-                    }, 80); // Velocidade da troca (quanto menor, mais rápido passa as luas)
+                    }, 80); 
                 }
-                // --- FIM DA ANIMAÇÃO ---
         
                 setTimeout(() => splash.remove(), 400); 
             }, 4000);
