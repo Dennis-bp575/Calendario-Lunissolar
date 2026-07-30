@@ -39,8 +39,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const raioDesfoque = intensidade * 35;
     const opacidadeAura = intensidade * 0.6;
     moonDisplay.style.filter = `drop-shadow(0 0 ${raioDesfoque}px rgba(255, 255, 255, ${opacidadeAura}))`;
-    
-    imgLua.style.transform = 'rotate(-90deg)';
 
   }
 
