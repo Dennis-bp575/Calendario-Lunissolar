@@ -192,10 +192,22 @@
                     />
                     
                 </div>
-                <!-- Mudamos para tracking-wide (letras mais espadas), font-light ou font-medium, e a margem negativa -mt-10 -->
-                <h1 id="poetic-month" class="text-3xl font-light tracking-wide text-slate-100 -mt-10 relative z-20 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                  <!-- O texto entra aqui via JS -->
-                </h1>
+
+                <!-- Container do Título com a margem negativa para subir na Lua -->
+                <div class="mt-[-2.5rem] relative z-20 flex flex-col items-center">
+                  
+                  <!-- Mini rótulo explicativo para os desavisados -->
+                  <span class="text-[10px] uppercase tracking-widest font-semibold text-slate-400 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                    Mês atual:
+                  </span>
+                  
+                  <!-- Nome do Mês Principal -->
+                  <h1 id="poetic-month" class="text-3xl font-light tracking-wide text-slate-100 mt-0.5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    <!-- O texto entra aqui via JS -->
+                  </h1>
+                
+                </div>
+
 
                 <!-- Parágrafos de dados mecânicos do calendário -->
                 <p id="lunar-day" class="text-base text-2xl text-slate-300">
