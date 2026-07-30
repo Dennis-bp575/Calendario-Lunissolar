@@ -58,6 +58,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (solarSeason) solarSeason.innerText = dadosAtuais.estacaoAtual;
   if (reflectionText) reflectionText.innerText = dadosAtuais.frasedoDia.text;
   if (reflectionOrigin) reflectionOrigin.innerText = dadosAtuais.frasedoDia.origin;
+  window.diaLunarAtual = dadosAtuais.lunarDay;
   
 });
 // Função para disparar o giro quando o carregamento sumir
