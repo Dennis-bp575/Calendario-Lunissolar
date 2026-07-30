@@ -27,9 +27,9 @@ window.addEventListener('DOMContentLoaded', () => {
   if (moonDisplay) moonDisplay.innerHTML = `<img id="imagem-lua" src="${dadosAtuais.moon}" alt="Lua" class="w-40 h-40 rounded-full object-cover transition-all duration-700 ease-out transform" />;`;
 
   if (poeticMonth) poeticMonth.innerText = dadosAtuais.poeticMonth;
-  if (lunarDay) lunarDay.innerText = `Hoje é o ${dadosAtuais.lunarDay}º dia lunar`;
-  if (periodDisplay) periodDisplay.innerText = dadosAtuais.period;
-  if (primaveraDisplay) primaveraDisplay.innerText = `Estamos na ${dadosAtuais.primavera}ª Primavera`;
+  if (lunarDay) lunarDay.innerText = `${dadosAtuais.lunarDay}º dia lunar`;
+  if (periodDisplay) periodDisplay.innerText = 'Período: Lua ${dadosAtuais.period}';
+  if (primaveraDisplay) primaveraDisplay.innerText = `${dadosAtuais.primavera}ª Primavera`;
   if (cycleDisplay) cycleDisplay.innerText = `Ciclo ${dadosAtuais.cycle}`;
   
   if (alignmentDisplay) {
