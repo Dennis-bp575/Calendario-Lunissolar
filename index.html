@@ -140,40 +140,35 @@
                 const imgLua = document.getElementById('imagem-lua');
                 const moonDisplay = document.getElementById('moon-display');
                 
-                // Buscamos o dia que o app.js guardou globalmente (padrão dia 1 se falhar)
                 const diaFinal = window.diaLunarAtual || 1; 
                 
                 if (imgLua && moonDisplay) {
                     let diaInicial = 1;
                     
-                const animacaoCiclo = setInterval(() => {
-                    if (diaInicial <= diaFinal) {
-                        imgLua.src = `services/luas/Lua${diaInicial}.png`;
-                        
-                        const int = 1 - (Math.abs(diaInicial - 14) / 14);
-                        
-                        // 1. Mantemos o brilho forte na própria imagem da lua
-                        const brilho = 100 + (int * 60); 
-                        imgLua.style.filter = `brightness(${brilho}%)`;
-                        
-                        // 2. A MAGIA DA AURA: Criamos um gradiente circular no fundo da imagem!
-                        // Ele nasce branco/amarelado bem forte no centro e esmaece até sumir (0% de opacidade) na borda.
-                        // O tamanho do brilho expande dinamicamente conforme a intensidade (ex: int * 100).
-                        const tamanhoBrilho = int * 100; 
-                        moonDisplay.style.background = `radial-gradient(circle, rgba(255, 255, 255, ${int * 0.25}) 0%, rgba(255, 255, 255, 0) ${tamanhoBrilho}%)`;
-                        
-                        diaInicial++;
-                    } else {
-                        clearInterval(animacaoCiclo);
-                    }
-                }, 250);
-
-        
+                    const animacaoCiclo = setInterval(() => {
+                        if (diaInicial <= diaFinal) {
+                            imgLua.src = `services/luas/Lua${diaInicial}.png`;
+                            
+                            const int = 1 - (Math.abs(diaInicial - 14) / 14);
+                            
+                            const brilho = 100 + (int * 60); 
+                            imgLua.style.filter = `brightness(${brilho}%)`;
+                            
+                            const tamanhoBrilho = int * 100; 
+                            moonDisplay.style.background = `radial-gradient(circle, rgba(255, 255, 255, ${int * 0.25}) 0%, rgba(255, 255, 255, 0) ${tamanhoBrilho}%)`;
+                            
+                            diaInicial++;
+                        } else {
+                            clearInterval(animacaoCiclo);
+                        }
+                    }, 250);
+                } // <-- Essa chave tinha sumido!
+    
                 setTimeout(() => splash.remove(), 400); 
             }, 4000);
         });
-
     </script>
+
 
     
     <!-- <main> original -->
