@@ -137,7 +137,10 @@
         // Tempo ajustado para 2.3 segundos para casar perfeitamente com a nova velocidade da barra
         setTimeout(() => {
             splash.classList.add("fade-out");
-            
+            const imgLua = document.getElementById('imagem-lua');
+            if (imgLua) {
+                imgLua.style.transform = 'rotate(0deg)';
+            }
             // Remove totalmente do DOM após a transição para economizar memória e desempenho
             setTimeout(() => splash.remove(), 400); 
         }, 4000);
