@@ -22,8 +22,9 @@ window.addEventListener('DOMContentLoaded', () => {
     card.style.borderTop = `6px solid ${corDoMes}`;
   }
 
-  // 1. Ajustamos a caixa de fora (tiramos o drop-shadow fixo daqui)
-  if (moonDisplay) moonDisplay.className = "my-2 flex justify-center items-center animate-float";
+  // Adicionamos 'relative z-10' (para vir para a frente) e 'overflow-visible' (para o brilho não ser cortado)
+  if (moonDisplay) moonDisplay.className = "my-2 flex justify-center items-center animate-float relative z-10 overflow-visible";
+
   // 2. Colocamos a foto dentro da caixa com as novas classes do Tailwind (transition, duration, ease-out, transform)
   if (moonDisplay) moonDisplay.innerHTML = `<img id="imagem-lua" src="${dadosAtuais.moon}" alt="Lua" class="w-24 h-24 rounded-full object-cover transition-all duration-700 ease-out transform" />`;
 
