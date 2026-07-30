@@ -153,7 +153,7 @@
                             // Cálculo da pirâmide de brilho durante o ciclo
                             const int = 1 - (Math.abs(diaInicial - 14) / 14);
                             const brilho = 50 + (int * 100); 
-                            const aura = int * 180;  
+                            const aura = int * 400;  
                             
                             imgLua.style.filter = `brightness(${brilho}%)`;
                             moonDisplay.style.filter = `drop-shadow(0 0 ${aura}px rgba(255, 255, 255, ${int * 0.95}))`;
