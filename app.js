@@ -1,8 +1,6 @@
 // app.js
 import { getLunisolarDate, monthColors, getDailyReflection} from './services/calendar.js';
 
-console.log("Conteúdo de frasedoDia:", dadosAtuais.frasedoDia);
-
 window.addEventListener('DOMContentLoaded', () => {
   const card = document.getElementById('calendar-card');
   const moonDisplay = document.getElementById('moon-display');
