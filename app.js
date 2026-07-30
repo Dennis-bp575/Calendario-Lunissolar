@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   if (poeticMonth) poeticMonth.innerText = dadosAtuais.poeticMonth;
   if (lunarDay) lunarDay.innerText = `${dadosAtuais.lunarDay}º dia lunar`;
-  if (periodDisplay) periodDisplay.innerText = 'Período: Lua ${dadosAtuais.period}';
+  if (periodDisplay) periodDisplay.innerText = `Período: Lua ${dadosAtuais.period}`;
   if (primaveraDisplay) primaveraDisplay.innerText = `${dadosAtuais.primavera}ª Primavera`;
   if (cycleDisplay) cycleDisplay.innerText = `Ciclo ${dadosAtuais.cycle}`;
   
