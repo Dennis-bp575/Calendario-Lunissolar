@@ -27,21 +27,26 @@ window.addEventListener('DOMContentLoaded', () => {
   // 2. Colocamos a foto dentro da caixa com as novas classes do Tailwind (transition, duration, ease-out, transform)
   if (moonDisplay) moonDisplay.innerHTML = `<img id="imagem-lua" src="${dadosAtuais.moon}" alt="Lua" class="w-24 h-24 rounded-full object-cover transition-all duration-700 ease-out transform" />`;
 
-  // 1. Pegamos a foto da lua que acabou de ser criada no DOM
   const imgLua = document.getElementById('imagem-lua');
+  
   if (imgLua && moonDisplay) {
-    // 2. Pegamos o dia lunar atual (ex: 14)
     const dia = dadosAtuais.lunarDay;
-    // 3. Cálculo da intensidade (vai de 0 no dia 1/28 até 1 no dia 14)
     const intensidade = 1 - (Math.abs(dia - 14) / 14);
-    // 4. Efeito 1: Brilho na própria foto (Simula o +100 de exposição do Windows)
+    
     const ganhoBrilho = 100 + (intensidade * 60); 
     imgLua.style.filter = `brightness(${ganhoBrilho}%)`;
-    // 5. Efeito 2: Aura Dinâmica na caixa de fora (Substitui o drop-shadow antigo)
+    
     const raioDesfoque = intensidade * 35;
     const opacidadeAura = intensidade * 0.6;
     moonDisplay.style.filter = `drop-shadow(0 0 ${raioDesfoque}px rgba(255, 255, 255, ${opacidadeAura}))`;
+
+    imgLua.style.transform = 'rotate(-90deg)';
+
+    setTimeout(() => {
+      imgLua.style.transform = 'rotate(0deg)';
+    }, 50);
   }
+
 
 
   
