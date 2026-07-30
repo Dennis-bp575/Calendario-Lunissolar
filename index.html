@@ -193,20 +193,18 @@
                     
                 </div>
 
-                <!-- Container do Título com a margem negativa para subir na Lua -->
-                <div class="mt-[-2.5rem] relative z-20 flex flex-col items-center">
-                  
-                  <!-- Mini rótulo explicativo para os desavisados -->
-                  <span class="text-[10px] uppercase tracking-widest font-semibold text-slate-400 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-                    Mês atual:
-                  </span>
-                  
-                  <!-- Nome do Mês Principal -->
-                  <h1 id="poetic-month" class="text-3xl font-light tracking-wide text-slate-100 mt-0.5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                    <!-- O texto entra aqui via JS -->
-                  </h1>
-                
+               <!-- Adicionamos o ponto de exclamação em !mt-[-3.5rem] para forçar o bloco a subir, quebrando o space-y-4 -->
+                <div class="!mt-[-3.5rem] relative z-20 flex flex-col items-center">     
+                      <!-- Mini rótulo explicativo (vi no seu print que mudou para MÊS ATUAL, ficou ótimo!) -->
+                      <span class="text-[10px] uppercase tracking-widest font-semibold text-slate-400 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                        Mês Atual
+                      </span>
+                      <!-- Nome do Mês Principal -->
+                      <h1 id="poetic-month" class="text-3xl font-light tracking-wide text-slate-100 mt-0.5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                        <!-- O texto entra aqui via JS -->
+                      </h1>
                 </div>
+
 
 
                 <!-- Parágrafos de dados mecânicos do calendário -->
