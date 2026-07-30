@@ -16,6 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const solarSeason = document.getElementById('solar-season');
   const reflectionText = document.getElementById('reflection-text');
   const reflectionOrigin = document.getElementById('reflection-origin');
+  const cicloCompleto = document.getElementById('ciclo-completo');
 
   if (card) {
     const corDoMes = monthColors[dadosAtuais.poeticMonth] || '#475569';
@@ -29,8 +30,9 @@ window.addEventListener('DOMContentLoaded', () => {
   if (poeticMonth) poeticMonth.innerText = dadosAtuais.poeticMonth;
   if (lunarDay) lunarDay.innerText = `${dadosAtuais.lunarDay}º dia lunar`;
   if (periodDisplay) periodDisplay.innerText = `Período: Lua ${dadosAtuais.period}`;
-  if (primaveraDisplay) primaveraDisplay.innerText = `${dadosAtuais.primavera}ª Primavera`;
-  if (cycleDisplay) cycleDisplay.innerText = `Ciclo ${dadosAtuais.cycle}`;
+  if (cicloCompleto) {
+    cicloCompleto.innerText = `${dadosAtuais.primavera}ª Primavera do ${dadosAtuais.cycle}º Ciclo`;
+  }
   
   if (alignmentDisplay) {
     alignmentDisplay.innerText = `Restando ${19 - dadosAtuais.primavera} primaveras para o alinhamento e o início de um novo ciclo.`;
