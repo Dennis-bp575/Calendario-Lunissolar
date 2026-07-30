@@ -39,12 +39,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const raioDesfoque = intensidade * 35;
     const opacidadeAura = intensidade * 0.6;
     moonDisplay.style.filter = `drop-shadow(0 0 ${raioDesfoque}px rgba(255, 255, 255, ${opacidadeAura}))`;
-
+    
     imgLua.style.transform = 'rotate(-90deg)';
 
-    setTimeout(() => {
-      imgLua.style.transform = 'rotate(0deg)';
-    }, 50);
   }
 
 
@@ -65,4 +62,11 @@ window.addEventListener('DOMContentLoaded', () => {
   if (reflectionOrigin) reflectionOrigin.innerText = dadosAtuais.frasedoDia.origin;
   
 });
+// Função para disparar o giro quando o carregamento sumir
+window.iniciarAnimacaoDaLua = function() {
+  const imgLua = document.getElementById('imagem-lua');
+  if (imgLua) {
+    imgLua.style.transform = 'rotate(0deg)';
+  }
+}
 
