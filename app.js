@@ -22,8 +22,8 @@ window.addEventListener('DOMContentLoaded', () => {
     card.style.borderTop = `6px solid ${corDoMes}`;
   }
 
-  // Adicionamos 'relative z-10' (para vir para a frente) e 'overflow-visible' (para o brilho não ser cortado)
-  if (moonDisplay) moonDisplay.className = "my-2 flex justify-center items-center animate-float relative z-10 overflow-visible";
+  // Adicionamos w-48 h-48 para expandir a caixa do moon-display e dar espaço para a aura brilhar
+  if (moonDisplay) moonDisplay.className = "my-2 w-48 h-48 mx-auto flex justify-center items-center animate-float relative z-10 overflow-visible";
   if (moonDisplay) moonDisplay.innerHTML = `<img id="imagem-lua" src="${dadosAtuais.moon}" alt="Lua" class="w-32 h-32 rounded-full object-cover transition-all duration-700 ease-out transform" />;`;
 
   if (poeticMonth) poeticMonth.innerText = dadosAtuais.poeticMonth;
